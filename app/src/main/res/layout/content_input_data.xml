@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="16dp"
+      android:scrollbars="none"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      tools:context="jbualuang.com.incomeexpense.InputDataActivity"
+      tools:showIn="@layout/activity_input_data">
+
+      <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnCount="1"
+            android:maxWidth="500dp"
+            android:minWidth="350dp">
+
+            <TextView android:text="ชนิดรายการ" android:textStyle="bold"/>
+            <RadioGroup android:id="@+id/r_group" android:orientation="horizontal">
+                  <RadioButton android:id="@+id/radio_expense"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginRight="30dp"
+                               android:checked="true"
+                               android:text="รายจ่าย"/>
+                  <RadioButton android:id="@+id/radio_income"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="รายรับ"/>
+            </RadioGroup>
+
+            <android.support.v4.widget.Space android:layout_height="20dp"/>
+
+            <TextView android:text="วัน เดือน ปี" android:textStyle="bold"/>
+            <LinearLayout android:layout_gravity="fill_horizontal">
+                  <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                        android:id="@+id/datePickerEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"
+                        android:enabled="false"
+                        android:focusable="false"
+                        app:dateFormat="dd-MM-yyyy"/>
+
+                  <ImageButton
+                        android:id="@+id/button_date"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:src="@drawable/ic_add_box"
+                        android:tint="@color/colorPrimary"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="center_vertical"
+                        />
+            </LinearLayout>
+
+            <android.support.v4.widget.Space android:layout_height="20dp"/>
+
+            <TextView android:text="ชื่อรายการ" android:textStyle="bold"/>
+            <LinearLayout android:layout_gravity="fill_horizontal">
+                  <EditText
+                        android:id="@+id/edit_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_edit"/>
+
+                  <ImageButton android:id="@+id/button_title"
+                               android:layout_width="36dp"
+                               android:layout_height="36dp"
+                               android:src="@drawable/ic_add_box"
+                               android:tint="@color/colorPrimary"
+                               android:layout_marginBottom="5dp"
+                               android:layout_gravity="center_vertical"
+                  />
+            </LinearLayout>
+
+            <android.support.v4.widget.Space android:layout_height="20dp"/>
+
+            <TextView android:text="จำนวนเงิน" android:textStyle="bold"/>
+
+            <LinearLayout android:layout_gravity="fill_horizontal">
+                  <EditText android:id="@+id/edit_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_edit"
+                            android:inputType="numberDecimal"/>
+
+                  <TextView android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=".00"/>
+            </LinearLayout>
+
+            <android.support.v4.widget.Space android:layout_height="20dp"/>
+
+            <Button android:id="@+id/button_save"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/ButtonStyle"
+                    android:text="บันทึกข้อมูล"/>
+      </GridLayout>
+</ScrollView>
